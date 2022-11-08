@@ -41,5 +41,47 @@
       height="50"
     />
     <span>이미지1</span>
+
+    <h2>HTML 오디오</h2>
+    <!-- 
+        <audio> : 오디오를 문서에 출력한다. 
+            - controls : 컨트롤바 생성 유무를 지정한다. 값이 필요없는 속성
+            - muted : 음소거 여부 지정. 값이 필요없는 속성
+            - loop : 무한 반복 여부 지정. 값이 필요없는 속성
+            - autoplay : 자동 재생 여부 지정. 사용자의 불쾌한 경험을 막기 위해 브라우저에서 막는다.
+    -->
+    <audio
+      src="./audios/싸이 (Psy)_That That (Prod. & Feat. SUGA of BTS).mp3"
+      controls
+      muted
+      loop
+      autoplay
+    ></audio>
+
+    <h2>HTML 비디오</h2>
+    <!-- 
+        <video> : 영상을 문서에 출력한다.
+            => <img>와 <audio>의 속성을 같이 사용하면 된다.
+            => muted와 autoplay를 함께 설정하면 자동 재생이 가능하다.
+     -->
+    <video
+      src="./images/flower.mp4"
+      controls
+      loop
+      width="400"
+      muted
+      autoplay
+    ></video>
+
+    <!-- iframe : 다른 html 문서를 문서 내에 내장시킬 수 있다 => 보안의 이유로 사용을 권장하지 않는다.-->
+    <iframe
+      width="522"
+      height="294"
+      src="https://www.youtube.com/embed/sJurnFv8I6E"
+      title="애쉬 아일랜드 - Everything | [DF Live X New Balance] ASH ISLAND"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
   </body>
 </html>
