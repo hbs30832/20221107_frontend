@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML list</title>
+  </head>
+  <body>
+    <h1>HTML 목록 관련 태그</h1>
+    <!-- 
+        순서가 없는 목록 (ul : Unordered List) 
+            - <ul>를 먼저 작성하고, 목록들을 <li> 태그로 작성한다.
+            - 목록이라면 무조건 목록 관련 태그를 사용해야한다.
+            - <ul>와 <li> 모두 영역을 나누는 '블록' 요소이다.
+            - <ul>의 자식 요소로는 무조건 <li>가 작성되어야 한다.
+    -->
+    <ul>
+      <li>
+        <h3>HTML</h3>
+        <p>Hyper Text Markup Language의 약어이다.</p>
+        <ul>
+          <li>Hyper Text는 다른 문서와의 연결이 가능하다는 것을 의미합니다.</li>
+        </ul>
+      </li>
+      <li>
+        <h3>CSS</h3>
+        <p>Cacading Style Sheet 약어이다.</p>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <p>브라우저를 조작하는 스크립트 언어이다.</p>
+      </li>
+    </ul>
+    <!-- 
+        순서가 있는 목록 (ol : Ordered List)
+            - 기본적으로 <ul> 와 사용법이 똑같다.
+            - 앞에 순서를 나타내는 숫자가 자동으로 출력된다.
+            - type을 통해서 순서를 나타내는 글자를 변경할 수 있다.
+            - start 시작 숫자를 지정할 수 있다.
+            - reversed를 통해서 순서를 거꾸로 표시할 수 있다.
+     -->
+    <h2>떡볶이 레시피</h2>
+    <ol type="1" start="2" reversed>
+      <li>
+        물을 500ml을 중불에 올린다.
+        <ol>
+          <li>물이 끓기 시작하면 불을 약불로 줄인다.</li>
+          <li>물이 끓기 시작하면 불을 약불로 줄인다.</li>
+        </ol>
+      </li>
+      <li>물이 끓기 시작하면 떡을 넣는다.</li>
+      <li>고추장 2T, 고춧가루 1T, 설탕 1T, 물엿 0.5T, 간장 3T를 넣는다.</li>
+    </ol>
+  </body>
+</html>

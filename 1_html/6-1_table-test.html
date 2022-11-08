@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th {
+        border: 1px solid black;
+      }
+
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        성적
+      </caption>
+      <colgroup>
+        <col style="background-color: #ccc" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>반</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>수학</th>
+          <th>영어</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">A반</td>
+          <td>황보석</td>
+          <td>100점</td>
+          <td>60점</td>
+          <td rowspan="2">100점</td>
+        </tr>
+        <tr>
+          <td>김정철</td>
+          <td>80점</td>
+          <td>60점</td>
+        </tr>
+        <tr>
+          <td>김관훈</td>
+          <td>100점</td>
+          <td>60점</td>
+          <td>100점</td>
+        </tr>
+        <tr>
+          <td rowspan="2">B반</td>
+          <td>황보석</td>
+          <td>100점</td>
+          <td>60점</td>
+          <td>100점</td>
+        </tr>
+        <tr>
+          <td>황보석</td>
+          <td colspan="3">100점</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

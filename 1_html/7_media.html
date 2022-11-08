@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Media</title>
+  </head>
+  <body>
+    <h1>HTML 미디어 관련 태그</h1>
+
+    <h2>이미지</h2>
+    <!-- 
+        상대 경로 : 파일의 위치에 대해서 상대적인 경로 
+        ./ : 현재 파일의 위치
+        ../ : 현재 파일의 상위 디렉토리(폴더)
+        ./images/example.jpg => 같은 폴더 내에 있는 images 폴더 안의 example.jpg
+        
+        절대 경로 : 현재 파일 위치와 상관없이 절대적인 경로 => root(최상위) 디렉토리가 기준
+        / : root(최상위)
+        /html/images/example.jpg => root 폴더 내에 있는 html 폴더 안의 images 폴더 안의 example.jpg
+
+        root 폴더에 가까우면 => 절대 경로
+        현재 파일과 가까우면 => 상대 경로
+    -->
+
+    <!-- 
+        <img> : 리소스를 불러와 문서에 표시한다. 
+            - src : 불러올 리소스의 경로를 지정한다.
+            - alt : 리소스를 불러오는 데 실패했을 경우 보여줄 대체 텍스트. 브라우저가 읽어주기도 한다.
+            - width : 사진의 너비를 지정한다. 단위 생략시 px(픽셀) 단위로 지정된다.
+            - height : 사진의 높이를 지정한다. 
+                => width, height 둘중 하나만 지정시 원본 비율을 맞춰서 나머지를 조정한다.
+                => 둘 다 지정하면 원본의 비율이 깨진다.
+            - <img>는 인라인 요소이다.
+    -->
+    <img
+      src="https://i.ytimg.com/vi/eb05R1XN6NA/hq720.jpg?sqp=-…RhNIFsoZTAP&rs=AOn4CLBEgDpIMJcp96w5KXblTz-wHxLTFA"
+      alt="커피 사진"
+      width="200"
+      height="50"
+    />
+    <span>이미지1</span>
+  </body>
+</html>
