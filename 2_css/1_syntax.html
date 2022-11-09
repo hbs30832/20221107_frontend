@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      h3 {
+        font-size: 2rem;
+        color: tomato;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./1_syntax.css" />
+  </head>
+  <body>
+    <h1>CSS 기본문법</h1>
+    <div>
+      <h2>CSS의 적용 방법</h2>
+      <div>
+        <h3>인라인 방식</h3>
+        <ul>
+          <li style="color: red">
+            인라인 방식은 요소의 style 속성을 통해서 지정한다.
+          </li>
+          <li>우선 순위가 두번째 높으므로 주의해야한다.</li>
+          <li>
+            가독성, 유지 보수 측면에서 떨어지기 때문에 특수한 경우에만 사용된다.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>style 태그 방식</h3>
+        <ul>
+          <li>style 태그 안에 css를 작성한다.</li>
+          <li>
+            인라인 방식보단 낫지만, 재사용성과 유지보수가 떨어지고 html 문서의
+            상관없는 내용이 길어진다.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>link태그를 통한 외부 파일 연결</h3>
+        <ul>
+          <li>link 태그의 href 속성을 지정하여 외부 css 파일을 적용한다.</li>
+          <li>
+            수정이 필요할 때 해당 파일을 수정하면 되기 때문에 유지보수 뛰어나다.
+          </li>
+          <li>
+            다른 html 문서에서도 사용할 수 있기 때문에 재사용성이 뛰어나다
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

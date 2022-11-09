@@ -12,6 +12,7 @@
     <!-- 
         하이퍼 텍스트 : 다른 문서와 연결되어 있는 텍스트
         <a> : href 속성에 지정한 주소로 이동한다.
+            => <a>태그의 컨텐츠로 텍스트 뿐만 아니라 이미지 등도 넣을 수 있다.
     -->
     <!-- <header> : 문서의 헤더 영역을 나타내는 태그 -->
     <header>
@@ -19,7 +20,13 @@
       <h1><a href="./index.html">HTML 하이퍼 텍스트</a></h1>
       <nav>
         <ul>
-          <li><a href="./html/html.html">HTML</a></li>
+          <li>
+            <a href="./html/html.html">HTML</a>
+            <ul>
+              <li><a href="./html/html-1.html">HTML 기초 문법</a></li>
+              <li><a href="./html/html-2.html   ">HTML 요소의 종류</a></li>
+            </ul>
+          </li>
           <li><a href="./html/css.html">CSS</a></li>
           <li><a href="./html/javascript.html">JavaScript</a></li>
         </ul>
