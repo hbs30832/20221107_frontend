@@ -1,0 +1,33 @@
+* {
+  font-size: 24px;
+}
+
+li {
+  font-size: 16px;
+}
+
+h3 {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#big {
+  font-size: 36px;
+}
+
+/* 일치 선택자 */
+h3.green {
+  color: green;
+}
+
+/* 자식 선택자 */
+.list > li {
+  border: 1px solid black;
+}
