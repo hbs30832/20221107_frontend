@@ -27,7 +27,95 @@ h3.green {
   color: green;
 }
 
+.list {
+  border: 1px solid black;
+  padding: 0;
+}
+
 /* 자식 선택자 */
 .list > li {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+}
+
+/* 후손 선택자 */
+.list li {
+  /* li태그의 점 삭제 */
+  list-style: none;
+}
+
+/* 인접 형제 선택자 */
+.list .target + li {
+  color: #437823;
+}
+
+/* 첫번째 li요소만 제외하고 적용 */
+.list > li + li {
+  border-top: 1px solid black;
+}
+
+/* 일반 형제 선택자 */
+.list .target ~ li {
+  font-weight: bold;
+}
+
+/* 속성 선택자 */
+input[required] {
+  /* required 속성을 가진 input에만 적용 */
+  border-width: 5pxx;
+}
+
+input[type="checkbox"] {
+  /* type이 checkbox인 input에만 적용 */
+  width: 200px;
+}
+
+/* 선택자 연습 */
+
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.item.big {
+  width: 200px;
+  height: 200px;
+}
+
+.item > li {
+  color: red;
+}
+
+.item + .item {
+  margin-left: 10px;
+}
+
+input[type="radio"] {
+  padding: 10px;
+}
+
+/* 가상 클래스 */
+.list > li:hover {
+  background-color: #ddd;
+}
+
+.list > li:nth-child(1) {
+  background-color: red;
+}
+
+.list > li:active {
+  background-color: #bbb;
+}
+
+.list > li:nth-child(1):hover::before {
+  /* 가상 요소는 디자인적으로 특정 상황에서만 요소를 추가해야할 때 사용한다. */
+  /* content 속성 지정 안하면 안생긴다 => 텍스트 없이 쓰려면 빈 문자열 ""라도 지정해야한다*/
+  content: "::before";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+}
+
+.list > li:nth-child(1)::after {
+  content: "::after";
 }
