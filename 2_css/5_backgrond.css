@@ -1,0 +1,50 @@
+body {
+  height: 2000px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #000;
+}
+
+.box:nth-child(2) {
+  margin-top: 10px;
+}
+
+.colorBox {
+  /* 배경색 지정 */
+  background-color: rgb(0, 0, 0, 0.4);
+
+  /* 배경 이미지 지정 */
+  background-image: url("./images/coffee-7567749_1280.jpg");
+
+  /* 배경 이미지의 크기 정 */
+  background-size: cover;
+
+  /* 배경 이미지 반복 방법 지정 */
+  background-repeat: no-repeat;
+
+  /* 배경 이미지의 위치를 지정 */
+  /* background-position: bottom 10px right 10px; */
+
+  /* 배경 이미지의 시작점을 지정 */
+  background-origin: padding-box;
+
+  /* 배경의 지정 범위 */
+  background-clip: padding-box;
+
+  border-color: rgba(0, 0, 0, 0.2);
+
+  /* background-attachment: fixed; */
+
+  background-blend-mode: multiply;
+
+  overflow: scroll;
+
+  padding: 10px;
+
+  /* 단축속성 => 사이즈 앞에 포지션값이 반드시 먼저 와야하고 /로 구분한다.*/
+  background: url("./images/coffee-7567749_1280.jpg") center top / cover
+    no-repeat red padding-box padding-box;
+}

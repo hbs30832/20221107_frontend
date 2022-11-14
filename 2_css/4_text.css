@@ -1,0 +1,69 @@
+/* 텍스트 관련 속성을 거의 다 자식에게 상속된다. => <a> 같이 기본적인 스타일이 지정된 경우도 있다.*/
+:root {
+  /* :root 는 html 전체에 적용된다 => html보다 명시도(우선순위) */
+  font-size: 10px;
+}
+
+html {
+  font-family: "Noto";
+
+  font-weight: bold;
+
+  font-size: 32px;
+}
+
+a {
+  /* inhreit : 부모로부터 상속받는다. */
+  color: inherit;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 3rem; /* rem : root(최상위 요소)를 기준으로 배율로 지정 */
+}
+
+ul {
+  font-size: 20px;
+}
+
+li {
+  font-size: 0.7em; /* 부모 요소를 기준으로 배율로 지정 */
+}
+
+.color {
+  color: #1ff24a;
+}
+
+.align {
+  text-align: justify;
+}
+
+.transform {
+  text-transform: lowercase;
+  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+.decoration {
+  /* 위치, 모양, 색상, 두께 */
+  text-decoration: underline wavy red 4px;
+
+  /* text-decoration의 개별 속성 */
+  text-decoration-line: line-through;
+  text-decoration-color: blue;
+  text-decoration-thickness: 10px;
+  text-decoration-style: dashed;
+}
+
+.lineHeight {
+  line-height: 20px;
+  word-spacing: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* 사용한 font를 지정한다. */
+@font-face {
+  font-family: "Noto";
+  src: url("./fonts/NotoSansKR-Regular.otf");
+  font-weight: 400;
+}

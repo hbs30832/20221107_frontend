@@ -1,0 +1,49 @@
+body {
+  height: 2000px;
+}
+
+.container {
+  width: 400px;
+  height: 500px;
+  border: 3px solid black;
+
+  padding: 50px;
+
+  position: relative;
+}
+
+.wrapper {
+  height: 300px;
+  border: 3px solid red;
+  position: relative;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+
+  position: fixed;
+  top: 0;
+  right: 20px;
+
+  /* top: 100px; */
+}
+
+.box:nth-child(1) {
+  z-index: 1000;
+}
+
+.box:nth-child(2) {
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.box:nth-child(3) {
+  position: absolute;
+  background-color: red;
+  z-index: 300;
+}
