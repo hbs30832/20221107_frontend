@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      h1 {
+        float: left;
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+
+      nav::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+
+      nav ul li {
+        float: left;
+        /* 글씨가 한줄일 경우 height와 line-height값을 동일하게 주면 세로로 가운데 정렬할 수 있다. */
+        height: 50px;
+        line-height: 50px;
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Nepp</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="">HTML </a>
+          </li>
+          <li><a href="">CSS</a></li>
+          <li><a href="">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

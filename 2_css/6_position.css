@@ -25,7 +25,8 @@ body {
 
   position: fixed;
   top: 0;
-  right: 20px;
+  left: 0;
+  right: -20px;
 
   /* top: 100px; */
 }
@@ -46,4 +47,12 @@ body {
   position: absolute;
   background-color: red;
   z-index: 300;
+}
+
+.btn {
+  position: absolute;
+  height: 100px;
+  background-color: tomato;
+  left: 100px;
+  right: 100px;
 }

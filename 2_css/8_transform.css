@@ -1,0 +1,103 @@
+body {
+  padding-bottom: 200px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+
+  text-align: center;
+  line-height: 100px;
+
+  /* transition */
+  /* transition은 수치와 같이 값의 연산이 가능한 단위에만 적용된다. */
+
+  transition-duration: 1s; /* 지속시간 : 몇초에 걸쳐 변화할 것인가 */
+  transition-delay: 0s; /* 지연시간 : 몇초 뒤에 변화를 시작할 것인가. */
+  transition-property: color, transform; /* transition을 적용하고자 하는 속성을 지정*/
+  transition-timing-function: linear;
+
+  transition: color 0.25s, transform 5s, opacity 0.5s;
+}
+
+.box:hover {
+  opacity: 0;
+  color: red;
+  transition-delay: 0.4s;
+  width: 200px;
+}
+
+.box + .box {
+  margin-top: 30px;
+}
+
+.container {
+  perspective: 500px;
+}
+
+.container + .container {
+  margin-top: 100px;
+}
+
+/* transform은 레이아웃에 영향을 안준다 => 리페인트 */
+/* height, widht, display 등은 레이아웃에 영향을 준다 => 리플로우 */
+
+/* translate : 기준이 자기 자신이다. */
+.translate .box:nth-of-type(1):hover {
+  transform: translateX(30px);
+}
+
+.translate .box:nth-of-type(2):hover {
+  transform: translateY(-30px);
+}
+
+.translate .box:nth-of-type(3):hover {
+  transform: translate(20px, 20px);
+}
+
+.translate .box:nth-of-type(4):hover {
+  transform: translateZ(30px);
+}
+
+.scale .box {
+  /* 변형의 기준점을 옮긴다. */
+  transform-origin: left top;
+}
+
+/* scale : 요소의 비율을 조절한다. 컨텐츠도 영향을 받는다. */
+.scale .box:nth-of-type(1):hover {
+  transform: scaleX(3);
+}
+
+.scale .box:nth-of-type(2):hover {
+  transform: scaleY(0.5);
+}
+
+.scale .box:nth-of-type(3):hover {
+  transform: scale(1.3);
+}
+
+.rotate .box:nth-of-type(1):hover {
+  transform: rotateX(30deg);
+}
+
+.rotate .box:nth-of-type(2):hover {
+  transform: rotateY(45deg);
+}
+
+.rotate .box:nth-of-type(3):hover {
+  transform: rotate(45deg);
+}
+
+.skew .box:nth-of-type(1):hover {
+  transform: skewX(45deg);
+}
+
+.skew .box:nth-of-type(2):hover {
+  transform: skewY(45deg);
+}
+
+.skew .box:nth-of-type(3):hover {
+  transform: skew(45deg, 30deg);
+}
