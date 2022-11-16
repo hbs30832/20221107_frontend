@@ -8,7 +8,7 @@
   animation-iteration-count: 3;
   animation-delay: 1s;
   animation-timing-function: linear;
-  animation-direction: alternate;
+  animation-direction: alternate-reverse;
   animation-fill-mode: both;
 
   transform: rotate(30deg);

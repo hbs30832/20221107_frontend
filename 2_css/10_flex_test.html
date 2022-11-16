@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS flex</title>
+    <link rel="stylesheet" href="./10_flex.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      background-color: #eee;
+      height: 60px;
+    }
+
+    h1 {
+      position: absolute;
+      margin-left: 30px;
+    }
+
+    nav {
+      flex: 1;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    li:hover {
+      background-color: #bbb;
+    }
+
+    li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+
+      height: 60px;
+    }
+
+    li a:hover {
+      background-color: #bbb;
+    }
+  </style>
+  <body>
+    <header>
+      <h1><a href="">Nepp</a></h1>
+      <nav>
+        <ul>
+          <li><a href="">HTML</a></li>
+          <li><a href="">CSS</a></li>
+          <li><a href="">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
