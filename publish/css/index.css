@@ -1,0 +1,99 @@
+#header {
+  display: flex;
+  /* align-items: center; */
+  padding: 0 30px;
+
+  border-bottom: 1px solid #ddd;
+
+  max-height: 60px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+#logo {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 1.8rem;
+  line-height: 60px;
+}
+
+#gnb {
+  width: 100%;
+}
+
+#gnbList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#gnbList > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 60px;
+}
+
+#gnbList > li:hover {
+  background-color: #ddd;
+}
+
+#gnbList .depth02 li a {
+  display: block;
+  padding: 8px 10px;
+}
+
+#gnbList .depth02 li a:hover {
+  background-color: #eee;
+}
+
+button {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  #header:hover {
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #header {
+    justify-content: center;
+  }
+  #gnb {
+    width: auto;
+  }
+  #gnbList {
+    display: block;
+  }
+
+  #gnbList .depth02 {
+    display: none;
+  }
+
+  button {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #header {
+    max-height: 50px;
+  }
+
+  #logo {
+    font-size: 1.5rem;
+    line-height: 50px;
+  }
+
+  #gnbList li {
+    font-size: 0.8rem;
+  }
+
+  #gnbList > li > a {
+    height: 50px;
+  }
+}
