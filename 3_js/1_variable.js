@@ -45,6 +45,8 @@ var USERNAME;
 // 문제 1. num1과 num2를 선언하고 각각 20, 30을 할당
 var num1 = 20;
 var num2 = 30;
+var num3, num4;
+num3 = num4 = 40;
 
 // 문제 2. num1과 num2를 더한 값을 result02 변수에 할당
 var result02 = num1 + num2;
