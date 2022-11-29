@@ -13,7 +13,7 @@
         - 표현식이 필요한 자리에 함수의 실행 결과가 올 수 있다.
 */
 function sum(a, b) {
-  return a + b;
+  return a - b;
 }
 
 function calculate(a, b) {
@@ -93,9 +93,15 @@ function func() {
         => JavaScript는 함수를 값으로 취급한다. => 값으로써 함수를 전달할 때는 익명함수를 사용하면 간결하게 작성할 수 있다.
 */
 // getData();
-let getData = function fetchData() {
+let getData = function () {
   console.log("익명함수입니다.");
 };
+
+// 식별자가 필요하다 => 함수 선언식 혹은 함수 표현식의 형태로 식별자를 써야한다.
+//  => 값으로 전달되는 경우에는 식별자가 필요없다.
+// function (a,b) {
+//   return a + b;
+// }
 
 /* 
     화살표 함수(Arrow Function) - ES6(2015)
@@ -150,3 +156,25 @@ function foo() {
 // ()를 생략하면 함수 그 자체를 가리킨다. => 함수를 값으로 사용할 때는 호출이 아니라 식별자를 참조해야한다.
 let copyFunc = foo;
 console.log(copyFunc());
+
+/* 
+  콜백함수(Callback Function)
+    => 함수의 값으로 전달되는 함수.
+    => 함수에서 실행되는 코드가 나중에 정해질 때 사용한다.
+    => 콜백함수로 익명함수를 많이 사용한다.
+    => 값으로 전달할 때는 호출이 아니라 함수 자체를 전달해야한다.
+*/
+function repeat(repeatCount, callback) {
+  for (let i = 0; i < repeatCount; i++) {
+    callback(i);
+  }
+}
+
+function print() {
+  console.log("코드 실행!");
+}
+repeat(5, print);
+
+repeat(5, function (idx) {
+  console.log("코드 실행!", idx);
+});

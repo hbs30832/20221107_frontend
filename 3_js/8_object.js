@@ -1,6 +1,7 @@
 /* 
     객체(Object)
         - key-value 형태로 여러 데이터를 저장할 수 있다.
+        - 여러 데이터를 합쳐서 고유한 정보를 나타내는 형태.
 
 */
 let user = {
@@ -51,7 +52,7 @@ dog.bow();
 let user02 = {
   age: 30,
   name: "seok",
-  introduce: () => {
+  introduce: function () {
     console.log(this);
     console.log(`안녕하세요 저는 ${this.age}세 ${this.name}입니다.`);
   },
