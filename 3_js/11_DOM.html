@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+      }
+
+      .box.on {
+        transform: scale(1.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box on"></div>
+    <div class="container">
+      <div class="box" id="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <script>
+      /* 
+        DOM(Document Object Model) : HTML 문서를 조작할 수 있는 인터페이스(Application Progrmming Interface).
+            - HTML 문서에 대한 각종 메서드와 프로퍼티를 제공한다.
+            - document 객체를 통해서 이용할 수 있다. 
+      */
+
+      // 요소 취득 : 요소를 조작하기 위해 객체형태로 데이터를 받을 수 있다.
+
+      /* 
+        getElementById: 전달된 인자값을 id 속성값으로 가진 요소 1개를 반환한다.
+            => 전달하는 인자는 css 선택자가 아니다. => # 넣으면 안된다.
+            => id값을 가지는 요소가 없으면 null을 반환한다.
+      */
+      let boxElem = document.getElementById("box");
+      console.log("----getElementById----");
+      console.log(boxElem);
+
+      /* 
+        getElementsByClassName : 전달된 인자값을 클래스로 가지는 요소를 모두 반환한다.
+            => 전달하는 인자는 css 선택자가 아니다.
+            => HTMLCollection 이라는 유사배열 형태로 반환한다.
+            => 실시간으로 업데이트가 되기 때문에 다루기 까다롭다.
+      */
+      let boxList = document.getElementsByClassName("box");
+      console.log("----getElementsByClassName----");
+      console.log(boxList);
+
+      /* 
+        querySelector : 인자로 css 선택자를 전달받아 만족하는 요소를 1개를 반환한다.
+            => 여러개가 해당돼도 맨 상위의 한개의 요소만 반환한다.
+            => 선택자를 통해서 요소를 구체적으로 골라낼 수 있다. => 성능은 getElementById가 더 빠르다.
+      */
+      let boxElemQ = document.querySelector(".container .box");
+      console.log("----querySelector----");
+      console.log(boxElemQ);
+
+      /* 
+        querySelectorAll : 인자로 css 선택자를 전달받아 만족하는 요소를 모두 반환한다.
+            => NodeList라는 유사배열로 반환한다.
+            => 유사배열이지만 forEach가 구현되어 있다.
+      */
+      let boxListQ = document.querySelectorAll(".box");
+      console.log("----querySelectorAll----");
+      console.log(boxListQ);
+
+      /* 
+        취득한 요소의 스타일 변경
+            - 요소.style을 통해서 css 속성과 값을 할당하면 스타일이 적용된다.
+            - 요소에 인라인 속성으로 적용되기 때문에 우선순위에 주의가 필요하다.
+            - 요소.style.backgroundColor처럼 세부적으로 변경하는 것도 가능하다.
+                => background-color의 "-" 대신 카멜케이스를 사용하면 된다.
+            - 숫자 외의 다른 문자(ex. 단위, 속성명 등)은 ""(문자열)로 기입한다.
+      */
+      let containerElem = document.querySelector(".container");
+      containerElem.style = "border : 3px solid red";
+      containerElem.style.backgroundColor = "yellow";
+      containerElem.style.opacity = 0.5;
+
+      // HTMLElement(getElement*)는 style 프로퍼티의 자동완성이 된다.
+      boxElem.style.backgroundColor = "#421332";
+
+      //   boxList.style.backgroundColor = "red";
+      // boxList의 모든 요소에 배경색을 blue로 바꾸기
+      for (let i = 0; i < boxList.length; i++) {
+        boxList[i].style.backgroundColor = "red";
+      }
+
+      boxListQ.forEach(function (box) {
+        box.style.backgroundColor = "blue";
+      });
+
+      // Array.from() : 유사배열을 배열로 바꾼다.
+      let boxArr = Array.from(boxList);
+      boxArr.forEach((box) => {
+        box.style.border = "3px solid green";
+      });
+
+      /* 
+        특정 클래스에 대한 스타일을 미리 작성하고 필요따라 클래스를 추가하거나 제거한다.
+        요소.classList : 요소가 가지고 있는 클래스 목록.
+        요소.classList.add(클래스) : 클래스목록에 클래스를 추가한다.
+        요소.classList.remove(클래스) : 클래스 목록에서 클래스를 제거한다.
+        요소.classList.contians(클래스) : 클래스 목록에 클래스가 있는지 true, false 반환.
+        요소.classList.toggle(클래스) : 클래스가 있으면 제거, 없으면 추가한다.
+      */
+      console.log(boxList[0].classList);
+      boxList[0].classList.add("hidden");
+      boxList[0].classList.remove("on");
+
+      if (boxList[0].classList.contains("hidden"))
+        boxList[0].classList.remove("hidden");
+      else {
+        boxList[0].classList.add("hidden");
+      }
+
+      boxList[0].classList.toggle("hidden");
+    </script>
+  </body>
+</html>
