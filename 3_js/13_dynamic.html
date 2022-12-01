@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic</title>
+    <style>
+      .container {
+        width: 500px;
+        border: 3px solid red;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .container .box {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Hello World</h1>
+    <script>
+      // div 요소 노드 생성
+      let divElem = document.createElement("div");
+
+      // class 속성을 설정
+      divElem.setAttribute("class", "container");
+
+      // innerText는 textNode를 확인하는 '프로퍼티' => 값을 변경하면 텍스트노드가 바뀐다.
+      // 내용을 추가하는게 아니라 '덮어쓰는' 개념이다.
+      divElem.innerText = "컨테이너 생성!";
+
+      // body 태그에 div.container 추가
+      document.body.appendChild(divElem);
+
+      divElem.innerText = "변경";
+
+      /*
+          문제 div.box 요소 하나를 .container 요소에 추가하기. "박스" 글씨 넣기
+          1. 요소 노드를 만든다! => 이후의 순서는 중요하지 않다. => 성능에 영향이 있을 수 있다.
+          2. 필요한 속성노드를 붙여준다. => 요소노드.setAttribute("속성이름", "속성값")
+          3. 필요한 컨텐츠를 넣어준다. => 텍스트, 다른 요소 노드가 될 수 있다. => 요소노드.innerText 혹은 요소노드.appendChild(요소노드)
+          4. 문서에 출력한다. => 요소노드.appendChild(요소노드)
+      */
+      let boxElem = document.createElement("div");
+      divElem.appendChild(boxElem);
+      boxElem.classList.add("box");
+      boxElem.innerText = "박스";
+
+      // 문자열을 그냥 텍스트 노드로 해석한다.
+      divElem.innerText = "<div class='box'></div>";
+
+      // 문자열을 HTML 문법에 맞게 해석(파싱 : Parsing)한다.
+      //    => 기존의 노드들을 모두 비우고 덮어쓴다.
+      //    => += 연산자를 사용해도 화면을 다시 렌더링하기 때문에 성능 저하가 있다.
+      //    => 문서 내용상으로는 동일해보이지만 기존 요소와 같은 요소가 아니다. => 이벤트 바인딩 등이 사라진다.
+      divElem.innerHTML += "<div class='box'>박스</div>";
+      divElem.innerHTML += "<div class='box'>박스</div>";
+      divElem.innerHTML += "<div class='box'>박스</div>";
+      divElem.innerHTML += "<div class='box'>박스</div>";
+
+      for (let i = 0; i < 3; i++) {
+        let box = document.createElement("div");
+        box.classList.add("box");
+        box.innerText = "박스";
+        divElem.appendChild(box);
+      }
+
+      document.querySelector(".box").addEventListener("click", function () {
+        alert("click");
+      });
+
+      divElem.innerHTML =
+        "<div class='box'>박스</div><div class='box'>박스</div><div class='box'>박스</div>";
+
+      // innerHTML의 성능 저하 개선 => 문자열에 연결 연산자를 통해 긴 문자열을 만들어 한번만 innerHTML에 할당한다.
+      let str = "";
+      for (let i = 0; i < 100; i++) {
+        str += "<div class='box'>박스</div>";
+      }
+      divElem.innerHTML = str;
+
+      document.querySelector(".box").addEventListener("click", function () {
+        alert("클릭!");
+      });
+
+      // 기존의 바인딩이 사라진다.
+      divElem.innerHTML += "<div class='box'>박스</div>";
+
+      // 문제 각 박스 클릭시 클릭한 박스 빨간색으로 변경
+      // 모든 요소가 이벤트를 가지고 있으면 된다.
+      let boxList = document.querySelectorAll(".box");
+      // boxList의 모든 요소에 이벤트를 바인딩한다. => 이벤트 전파, 위임(Delegate)로 대체하는게 좋다.
+      boxList.forEach(function (box) {
+        box.addEventListener("click", function () {
+          box.style.backgroundColor = "red";
+        });
+      });
+    </script>
+  </body>
+</html>

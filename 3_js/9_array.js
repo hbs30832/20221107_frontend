@@ -128,6 +128,7 @@ let numList = [10, 13, 20, 30, 51];
 let result = numList.filter(function (num) {
   return num % 2 === 0;
 });
+
 // 화살표 함수를 이용하면 코드를 간결하게 작성할 수 있다.
 let result02 = numList.filter((num) => num % 2 === 0);
 console.log(result, numList);
@@ -145,5 +146,3 @@ let doubleList = numList.map(function (num) {
 });
 // map 함수 화살표함수로 구현해보기
 let doubleList02 = numList.map((num) => num * 2);
-
-console.log(doubleList02, numList);
