@@ -23,6 +23,12 @@
       <!-- 인라인 방식의 이벤트 바인딩은 거의 사용되지 않는다. -->
       <div class="box" onclick="console.log('click')"></div>
     </div>
+    <div class="numBox">
+      <input type="number" />
+      <button>등록</button>
+    </div>
+    <a href="https://google.com">Google</a>
+
     <script>
       /*
             이벤트(Event) : 브라우저에서 일어나는 모든 사건(사용자의 행동 포함)
@@ -88,6 +94,35 @@
         */
         console.dir(e.target, e.currentTarget);
         container.style.borderColor = "black";
+      });
+
+      let inputElem = document.querySelector("input");
+      let numBtn = document.querySelector(".numBox button");
+
+      // button 클릭시 input 값대로 박스의 크기 바꾸기
+      numBtn.addEventListener("click", function () {
+        boxElem.style.width = inputElem.value + "px";
+        /* 
+          input의 입력값(value)은 문자열.
+          parseInt(문자열) : 문자열을 숫자형 데이터로 변환한다. => 단, 변환 가능한 문자열이여야한다.
+            => 숫자로 변환 불가능한 데이터를 전달하면 NaN(Not a Number)을 반환한다.
+            => NaN은 isNaN() 함수로 확인해야한다. 
+        */
+        console.log(parseInt(inputElem.value));
+      });
+
+      inputElem.addEventListener("keypress", function (e) {
+        // keyup : 키를 눌렀다가 뗄 때 한번 발생
+        // keydown : 키를 누를 때 한번 발생
+        // keypress : 키를 누르고 있는 동안 연속으로 발생
+        if (e.key === "Enter") {
+          alert(e.target.value);
+        }
+      });
+
+      document.querySelector("a").addEventListener("click", function (e) {
+        // Event.preventDefualt() : 요소가 가지는 기본 기능을 실행하지 않는다.
+        e.preventDefault();
       });
     </script>
   </body>
