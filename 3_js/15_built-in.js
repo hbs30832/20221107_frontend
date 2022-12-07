@@ -54,12 +54,28 @@ let month = today.getMonth() + 1; // 1월이 0부터 시작한다.
 let date = today.getDate();
 let day = today.getDay(); // 0(일요일) ~ 6(토요일)
 
-console.log(year, month, date, day);
+console.log(`${year}년 ${month}월 ${date}일 ${day}`);
 
 let hours = today.getHours();
 let minutes = today.getMinutes();
 let seconds = today.getSeconds();
 console.log(hours, minutes, seconds);
+
+// Date.prototype.toLocaleDateString() : 사용자의 문화권에 맞게 시간 표기를 해준다.
+// let dateStr = today.toLocaleDateString("ko-KR", {
+//   year: "numeric",
+//   month: "short",
+//   day: "numeric",
+//   hour: "numeric",
+// });
+let dateStr = today.toLocaleDateString("ko-KR", {
+  dateStyle: "full",
+});
+
+let timeStr = today.toLocaleTimeString("ko-KR", {
+  timeStyle: "full",
+});
+console.log(dateStr, timeStr);
 
 today.setFullYear(2021);
 today.setMonth(9);
@@ -73,3 +89,45 @@ let yesterday = new Date("2021.11.6 11:20:00");
 console.log(yesterday);
 
 console.log(today);
+
+// Math : 수학관련 프로퍼티와 메서드 제공 => 주로 정적 프로퍼티(메서드 포함)를 사용한다.
+console.log(Math.PI * 2 * 10);
+
+console.log(Math.sin(Math.PI / 4));
+
+let float = 1.42412321;
+let int = parseInt(float); // parseInt() : 실수를 정수로 바꿀 때도 사용한다. 소수점 이하의 숫자를 버린다(내림).
+console.log(float, int);
+
+// 소수점 이하 내림
+console.log(Math.floor(float)); // 내림 처리한다. 소수점 이하의 숫자를 버린다.
+
+// 소수점 이하 올림
+console.log(Math.ceil(float)); // 올림 처리한다. 소수점 이하의 숫자를 버리고 숫자를 증가시킨다.
+
+// 소수점 이하 반올림
+console.log(Math.round(float)); // 반올림 처리한다.
+
+// 111 => 120 만들기
+console.log(Math.ceil(111 / 100) * 100);
+
+// Math.random() : 0~1 사이의 랜덤한 실수를 반환한다(실제 랜덤은 아니다).
+console.log(Math.floor(Math.random() * 5) + 5);
+
+// 1~45 로또 6개 번호 추첨하기(중복 x) => 반환하는 함수 만들기
+//  => 1. 1~45가 들어있는 배열에서 랜덤한 인덱스 6번 꺼내면 됨 => 인덱스 범위가 넘지 않게 주의
+//  => 2. result 담으면서 이미 있는 값인지 확인하기(배열 관련 함수)
+function getLottoNum() {
+  let result = [];
+
+  // result 배열의 길이가 6이 되기전까지만 실행 => 요소가 6개가 되는 순간 반복을 멈춘다.
+  while (result.length < 6) {
+    // result 배열에 랜덤한 수 num이 없을 때에만 push
+    let num = Math.floor(Math.random() * 45) + 1;
+    if (!result.includes(num)) result.push(num);
+  }
+
+  return result;
+}
+
+console.log(getLottoNum());
