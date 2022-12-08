@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "test",
+      "author": "hbs9312",
+      "id": 2
+    },
+    {
+      "title": "잘 될까요???",
+      "author": "hbs9312",
+      "id": 3
+    },
+    {
+      "title": "ㄴㅁㅇㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 4
+    },
+    {
+      "title": "ㄴㅁㅇㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 5
+    },
+    {
+      "title": "123123123",
+      "author": "hbs9312",
+      "id": 6
+    },
+    {
+      "title": "ㅁㄴㅇㅁㅇ",
+      "author": "hbs9312",
+      "id": 7
+    },
+    {
+      "title": "ㅁㅇㄴㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 8
+    },
+    {
+      "title": "ㅁㄴㅇㄴㅁ",
+      "author": "hbs9312",
+      "id": 9
+    },
+    {
+      "title": "ㅁㄴㅇ",
+      "author": "hbs9312",
+      "id": 10
+    },
+    {
+      "title": "ㅁㄴㅇㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 11
+    },
+    {
+      "title": "ㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 12
+    },
+    {
+      "title": "ㅁㄴㅇㄴㅁㅇ",
+      "author": "hbs9312",
+      "id": 13
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "ㅁㄴㅇㄴㅁㅇ",
+      "postId": 1,
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
