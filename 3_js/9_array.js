@@ -144,5 +144,20 @@ console.log(result, numList);
 let doubleList = numList.map(function (num) {
   return num * 2;
 });
+
 // map 함수 화살표함수로 구현해보기
 let doubleList02 = numList.map((num) => num * 2);
+
+let itemList = [
+  { id: 1, name: "사과 1kg", price: 3000 },
+  { id: 2, name: "오렌지 1kg", price: 1000 },
+  { id: 3, name: "포도 1kg", price: 2000 },
+];
+
+["사과 1kg : 3000원", "오렌지 1kg : 1000원", "포도 1kg : 2000원"];
+
+let priceList = itemList.map((item) => `${item.name} : ${item.price}원`);
+
+priceList.forEach((price) => {
+  document.body.innerHTML += `<div>${price}</div>`;
+});
